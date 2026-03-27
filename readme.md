@@ -39,7 +39,7 @@ cd frenchclass-frontend
 * 点击左下角 **Commit to ui/xxx**。
 
 ### 4.3 推送到云端并创建 PR
-* 点击上方的 **Publish branch**（第一次提交）或 **Push origin**。
+* 点击右侧出现的 **Push origin** 按钮。
 * 点击右侧出现的 **Create Pull Request** 按钮。
 * **注意**：这会自动打开浏览器，进入 GitHub 网页。
 * 在网页上确认：`base: main` ← `compare: ui/xxx`。
