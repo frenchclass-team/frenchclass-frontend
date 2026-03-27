@@ -1,0 +1,27 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{stem}}</text>
+    <text class="subtitle">请将正确答案填在空里</text>
+  </view>
+
+  <view class="form-card">
+    <block wx:for="{{answerList}}" wx:key="person">
+      <view class="form-row">
+        <text class="person-col">{{item.person}}</text>
+        
+        <input class="input-box {{item.resultClass}}" 
+               placeholder="输入变位" 
+               data-index="{{index}}"
+               bindinput="onInput"
+               value="{{item.userInput}}" />
+        
+        <icon class="feedback-icon" wx:if="{{item.resultClass === 'text-green'}}" type="success_no_circle" size="20" color="#07c160"/>
+        <icon class="feedback-icon" wx:if="{{item.resultClass === 'text-red'}}" type="warn" size="20" color="#ee0a24"/>
+      </view>
+    </block>
+  </view>
+
+  <view class="bottom-action-bar pb-safe">
+    <button class="btn btn-primary" bindtap="submitTest">提交校验</button>
+  </view>
+</view>

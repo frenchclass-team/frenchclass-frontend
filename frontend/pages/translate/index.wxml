@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="header">
+    <text class="title">文本翻译</text>
+    <text class="subtitle">中法互译功能即将上线</text>
+  </view>
+
+  <view class="translate-box">
+    <view class="lang-switch">
+      <text class="lang active">法语</text>
+      <text class="icon">⇄</text>
+      <text class="lang">中文</text>
+    </view>
+    
+    <textarea class="input-area" placeholder="在此输入需要翻译的文本（功能开发中...）" disabled="true"></textarea>
+    
+    <view class="action-bar">
+      <button class="btn-translate" disabled="true">翻 译</button>
+    </view>
+  </view>
+</view>

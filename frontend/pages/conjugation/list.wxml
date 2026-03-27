@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="header">
+    <text class="title">变位训练</text>
+    <text class="subtitle">选择一个动词开始学习</text>
+  </view>
+
+  <view class="list-container">
+    <block wx:for="{{verbList}}" wx:key="questionId">
+      <view class="list-item" bindtap="goToDetail" data-id="{{item.questionId}}">
+        <text class="verb-text">{{item.stem}}</text>
+        <view class="arrow"></view>
+      </view>
+    </block>
+  </view>
+
+  <view class="empty-state" wx:if="{{verbList.length === 0}}">
+    <text>暂无动词数据</text>
+  </view>
+</view>

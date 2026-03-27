@@ -1,0 +1,100 @@
+<view class="detail-container">
+  <video 
+  class="video-player" 
+  src="{{detail.videoUrl}}" 
+  controls 
+  autoplay="{{false}}"
+  binderror="onVideoError">
+  </video>
+
+  <view class="main-tabs">
+    <view class="tab-item {{currentTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">原文</view>
+    <view class="tab-item {{currentTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">学习</view>
+    <view class="tab-item {{currentTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">测试</view>
+  </view>
+
+  <scroll-view class="content-scroll" scroll-y>
+    
+    <view wx:if="{{currentTab === 0}}" class="tab-content original-tab">
+      <view class="article-title">{{detail.titleFr}}</view>
+      <view class="paragraph-item" wx:for="{{detail.paragraphs}}" wx:key="index">
+        <text class="fr-text">{{item.fr}}</text>
+        <text class="zh-text" wx:if="{{showTranslation}}">{{item.zh}}</text>
+      </view>
+      <view class="spacer"></view>
+    </view>
+
+    <view wx:if="{{currentTab === 1}}" class="tab-content study-tab">
+      <view class="sub-tabs">
+        <view class="sub-tab-item {{studyTab === 0 ? 'active' : ''}}" bindtap="switchStudyTab" data-index="0">单词</view>
+        <view class="sub-tab-item {{studyTab === 1 ? 'active' : ''}}" bindtap="switchStudyTab" data-index="1">语法</view>
+      </view>
+
+      <view wx:if="{{studyTab === 0}}" class="word-list">
+        <view class="word-card" wx:for="{{detail.studyContent.words}}" wx:key="wordId">
+          <view class="word-header">
+            <text class="spelling">{{item.spelling}}</text>
+            <text class="phonetic">{{item.phoneticSymbol}}</text>
+          </view>
+          <view class="meaning">{{item.meaning}}</view>
+          <view class="context" wx:if="{{item.contextExample.fr}}">
+            <text class="ctx-fr">{{item.contextExample.fr}}</text>
+            <text class="ctx-zh">{{item.contextExample.zh}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view wx:if="{{studyTab === 1}}" class="grammar-list">
+        <view class="grammar-card" wx:for="{{detail.studyContent.grammar}}" wx:key="grammarId">
+          <view class="g-title">{{item.title}}</view>
+          <rich-text class="g-content" nodes="{{item.richText}}"></rich-text>
+        </view>
+      </view>
+      <view class="spacer"></view>
+    </view>
+
+    <view wx:if="{{currentTab === 2}}" class="tab-content quiz-tab">
+      <view class="quiz-card" wx:for="{{detail.quizzes}}" wx:key="questionId">
+        <view class="q-stem">{{index + 1}}. {{item.stem}}</view>
+
+        <radio-group wx:if="{{item.type === 'choice'}}" bindchange="onQuizInput" data-id="{{item.questionId}}">
+          <label class="q-option {{showAnswers ? (opt.key === item.correctStr ? 'text-green' : (userAnswers[item.questionId] === opt.key ? 'text-red' : '')) : ''}}" 
+                 wx:for="{{item.optionsList}}" wx:for-item="opt" wx:key="key">
+            <radio value="{{opt.key}}" disabled="{{showAnswers}}" color="#000" checked="{{userAnswers[item.questionId] === opt.key}}" /> {{opt.text}}
+          </label>
+        </radio-group>
+
+        <view wx:elif="{{item.type === 'conjugation'}}" class="q-conjugation-box">
+          <view class="q-conjugation-row" wx:for="{{item.answerList}}" wx:for-item="ans" wx:key="person">
+            <text class="person-text">{{ans.person}}</text>
+            <input class="q-input {{showAnswers ? (userAnswers[item.questionId + '_' + ans.person] == ans.correctVerb ? 'text-green' : 'text-red') : ''}}"
+                   placeholder="输入变位"
+                   bindinput="onQuizInput"
+                   data-id="{{item.questionId + '_' + ans.person}}"
+                   disabled="{{showAnswers}}" />
+          </view>
+        </view>
+
+        <view wx:else class="q-input-box">
+          <input class="q-input {{showAnswers ? (userAnswers[item.questionId] == item.correctStr ? 'text-green' : 'text-red') : ''}}"
+                 placeholder="请输入答案"
+                 bindinput="onQuizInput"
+                 data-id="{{item.questionId}}"
+                 disabled="{{showAnswers}}" />
+        </view>
+
+        <view class="answer-display" wx:if="{{showAnswers}}">
+          <text>正确答案：{{item.correctStr}}</text>
+        </view>
+      </view>
+      <view class="spacer"></view>
+    </view>
+  </scroll-view>
+
+  <view class="bottom-action-bar pb-safe" wx:if="{{currentTab === 0}}">
+    <button class="btn btn-outline" bindtap="toggleTranslation">{{showTranslation ? '隐藏翻译' : '原文翻译'}}</button>
+  </view>
+  <view class="bottom-action-bar pb-safe" wx:if="{{currentTab === 2}}">
+    <button class="btn btn-primary" bindtap="toggleAnswers">显示答案</button>
+  </view>
+</view>

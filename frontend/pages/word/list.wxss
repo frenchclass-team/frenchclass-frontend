@@ -1,0 +1,10 @@
+.container { padding: 30rpx; }
+.word-list { display: flex; flex-direction: column; }
+.word-item { 
+  padding: 40rpx; background: #fff; border-radius: 16rpx; 
+  margin-bottom: 24rpx; display: flex; justify-content: space-between; 
+  align-items: center; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.03); 
+}
+.spelling { font-size: 36rpx; font-weight: bold; color: #000; font-family: Georgia, serif; }
+.meaning { font-size: 28rpx; color: #666; }
+.loading-tip, .bottom-tip { text-align: center; font-size: 24rpx; color: #999; margin: 30rpx 0; }

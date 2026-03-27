@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="article-list">
+    <block wx:for="{{articleList}}" wx:key="articleId">
+      <view class="article-card" bindtap="navToDetail" data-id="{{item.articleId}}">
+        <image class="cover-img" src="{{item.coverUrl}}" mode="aspectFill"></image>
+        <view class="title-overlay">
+          <text class="title-fr">{{item.titleFr}}</text>
+          <text class="title-zh">{{item.titleZh}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{loading}}" class="loading-tip">加载中...</view>
+  <view wx:if="{{!hasMore && articleList.length > 0}}" class="bottom-tip">- 到底了 -</view>
+</view>

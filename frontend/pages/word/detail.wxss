@@ -1,0 +1,37 @@
+.detail-container { height: 100vh; display: flex; flex-direction: column; background: #f7f8fa; }
+.word-swiper { flex: 1; height: 100%; }
+.word-card { height: 100%; padding: 60rpx 40rpx; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; }
+
+.main-info { display: flex; flex-direction: column; align-items: center; margin-top: 120rpx; margin-bottom: 60rpx; }
+.spelling { font-size: 80rpx; font-weight: bold; color: #000; font-family: Georgia, serif; margin-bottom: 20rpx; }
+.phonetic-row { display: flex; align-items: center; }
+.phonetic { font-size: 36rpx; color: #666; font-family: Arial, sans-serif; }
+.audio-icon { font-size: 40rpx; padding: 10rpx 20rpx; }
+
+.hint-text { color: #ccc; font-size: 28rpx; margin-top: 100rpx; }
+
+.scroll-area { flex: 1; width: 100%; }
+.definitions-box { width: 100%; }
+.def-item { margin-bottom: 30rpx; background: #fff; padding: 40rpx; border-radius: 20rpx; box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.03); }
+.def-header { display: flex; align-items: flex-start; margin-bottom: 10rpx; }
+.pos { font-size: 24rpx; color: #fff; background: #000; padding: 4rpx 16rpx; border-radius: 8rpx; margin-right: 20rpx; margin-top: 4rpx; }
+.meaning { font-size: 32rpx; color: #333; font-weight: 500; flex: 1; line-height: 1.4; }
+
+.examples-box { margin-top: 30rpx; border-top: 1px dashed #eee; padding-top: 30rpx; }
+.example-item { margin-bottom: 30rpx; }
+.ex-fr { font-size: 30rpx; color: #333; margin-bottom: 10rpx; display: flex; align-items: center; flex-wrap: wrap; }
+.audio-icon-small { font-size: 28rpx; margin-left: 10rpx; padding: 10rpx; }
+.ex-zh { font-size: 28rpx; color: #999; }
+.spacer { height: 180rpx; } /* 防遮挡高度 */
+
+/* 底部悬浮操作栏 */
+.bottom-action-bar { 
+  position: fixed; bottom: 0; left: 0; right: 0; 
+  display: flex; justify-content: space-between; 
+  padding: 30rpx 40rpx; background: #fff; 
+  box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.05); z-index: 100; 
+}
+.btn { width: 46%; height: 96rpx; line-height: 96rpx; text-align: center; border-radius: 48rpx; font-size: 32rpx; font-weight: 500; border: none; }
+.btn::after { border: none; }
+.btn-unmastered { background: #f5f5f5; color: #333; }
+.btn-mastered { background: #000; color: #fff; }

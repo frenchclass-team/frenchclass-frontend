@@ -1,0 +1,33 @@
+# =================================================================
+# 1. 后端 (Backend - Java/Maven)
+# =================================================================
+backend/target/
+backend/.mvn/
+backend/*.iml
+backend/.idea/
+backend/postman/
+backend/HELP.md
+
+# STS/VS Code
+backend/.apt_generated
+backend/.classpath
+backend/.factorypath
+backend/.project
+backend/.settings
+backend/.springBeans
+backend/.vscode/
+
+# =================================================================
+# 2. 前端 (Frontend - 微信小程序)
+# =================================================================
+frontend/node_modules/
+frontend/dist/
+# 忽略私有配置（包含本地开发者 AppID 和调试设置）
+frontend/project.private.config.json
+
+# =================================================================
+# 3. 系统与通用
+# =================================================================
+.DS_Store
+Thumbs.db
+*.log

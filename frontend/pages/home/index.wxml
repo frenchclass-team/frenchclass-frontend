@@ -1,0 +1,25 @@
+<view class="home-container">
+  <view class="banner">
+    <text class="greeting">Bonjour!</text>
+    <text class="desc">今天想学点什么？</text>
+  </view>
+
+  <view class="grid-menu">
+    <view class="menu-card" bindtap="navTo" data-url="/pages/word/list">
+      <view class="icon-box">📚</view>
+      <text class="card-title">单词速记</text>
+    </view>
+    <view class="menu-card" bindtap="navTo" data-url="/pages/phonetic/category">
+      <view class="icon-box">🗣️</view>
+      <text class="card-title">口语跟读</text>
+    </view>
+    <view class="menu-card" bindtap="navTo" data-url="/pages/conjugation/list">
+      <view class="icon-box">✍️</view>
+      <text class="card-title">变位训练</text>
+    </view>
+    <view class="menu-card" bindtap="navTo" data-url="/pages/article/list">
+      <view class="icon-box">🎬</view>
+      <text class="card-title">视频学习</text>
+    </view>
+  </view>
+</view>

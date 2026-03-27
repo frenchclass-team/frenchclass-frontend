@@ -1,0 +1,99 @@
+.detail-container { display: flex; flex-direction: column; height: 100vh; background: #fff; }
+
+.anatomy-box { height: 35vh; background: #f7f8fa; display: flex; justify-content: center; align-items: center; }
+.anatomy-img { width: 80%; height: 80%; }
+
+.info-scroll { flex: 1; background: #fff; padding: 40rpx 30rpx; box-sizing: border-box; }
+.info-card { margin-bottom: 50rpx; }
+.section-title { font-size: 34rpx; font-weight: bold; margin-bottom: 20rpx; color: #000; border-left: 8rpx solid #000; padding-left: 16rpx; }
+.section-content { font-size: 30rpx; color: #666; line-height: 1.6; display: block; }
+.spacer { height: 200rpx; } /* 防遮挡高度 */
+
+/* 底部悬浮操作栏 */
+.bottom-action-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff;
+  display: flex; justify-content: space-around; align-items: flex-end;
+  padding-top: 20rpx;
+  box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.05);
+  z-index: 100;
+}
+.action-btn { display: flex; flex-direction: column; align-items: center; color: #333; font-size: 24rpx; margin-bottom: 10rpx;}
+.icon-box { font-size: 48rpx; margin-bottom: 10rpx; }
+
+/* 麦克风主按钮凸起设计 */
+.record-btn {
+  background: #000; color: #fff;
+  width: 180rpx; height: 180rpx;
+  border-radius: 50%;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  box-shadow: 0 8rpx 20rpx rgba(0,0,0,0.2);
+}
+.record-btn .icon-box { font-size: 56rpx; margin-bottom: 0;}
+.record-btn.recording {
+  background: #ee0a24; /* 录音中变红给予视觉反馈 */
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+/* 读音规则与例词样式 */
+.rule-list {
+  margin-top: 20rpx;
+}
+
+.rule-item {
+  margin-bottom: 30rpx;
+  background: #fcfcfc;
+  padding: 20rpx;
+  border-radius: 12rpx;
+  border: 1px solid #f0f0f0;
+}
+
+.rule-pattern {
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  font-weight: 500;
+}
+
+.rule-pattern .dot {
+  color: #ee0a24;
+  margin-right: 10rpx;
+}
+
+.pattern-text {
+  font-weight: bold;
+  color: #000;
+}
+
+/* 例词列表样式 */
+.example-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
+  padding-left: 30rpx; /* 缩进 */
+}
+
+.example-item {
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.ex-word {
+  width: 160rpx;
+  color: #333;
+  font-weight: 500;
+  font-family: Georgia, serif; /* 法语单词衬线体更有质感 */
+}
+
+.ex-phonetic {
+  width: 140rpx;
+  color: #666;
+  font-family: Arial, sans-serif;
+}
+
+.ex-meaning {
+  flex: 1;
+  color: #999;
+}

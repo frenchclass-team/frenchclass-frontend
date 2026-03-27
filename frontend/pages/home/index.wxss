@@ -1,0 +1,12 @@
+.home-container { padding: 30rpx; }
+.banner { margin-bottom: 50rpx; padding: 40rpx 0; }
+.greeting { font-size: 60rpx; font-weight: bold; display: block; }
+.desc { font-size: 28rpx; color: #666; margin-top: 10rpx; display: block; }
+
+.grid-menu { display: flex; flex-wrap: wrap; justify-content: space-between; }
+.menu-card { 
+  width: 48%; background: #fff; border-radius: 20rpx; padding: 40rpx 0; 
+  margin-bottom: 30rpx; text-align: center; box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.05);
+}
+.icon-box { font-size: 60rpx; margin-bottom: 20rpx; }
+.card-title { font-size: 32rpx; font-weight: 500; color: #333; }

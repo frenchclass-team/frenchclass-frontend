@@ -1,0 +1,13 @@
+.profile-container { padding: 30rpx; height: 100vh; display: flex; flex-direction: column;}
+.user-info { display: flex; align-items: center; background: #fff; padding: 40rpx; border-radius: 20rpx; margin-bottom: 40rpx; box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.03);}
+.avatar { width: 120rpx; height: 120rpx; border-radius: 50%; background-color: #eee; margin-right: 30rpx; }
+.info-text { display: flex; flex-direction: column; }
+.nickname { font-size: 36rpx; font-weight: bold; margin-bottom: 10rpx; }
+.role-tag { font-size: 24rpx; color: #fff; background: #000; padding: 4rpx 16rpx; border-radius: 8rpx; align-self: flex-start; }
+
+.menu-list { background: #fff; border-radius: 20rpx; padding: 0 30rpx; flex: 1; }
+.menu-item { display: flex; justify-content: space-between; padding: 40rpx 0; border-bottom: 1px solid #f5f5f5; font-size: 30rpx; }
+.arrow { color: #ccc; }
+
+.logout-btn-wrapper { margin-top: 60rpx; padding-bottom: 40rpx;}
+.btn-logout { background-color: #fff; color: #ee0a24; border-radius: 50rpx; font-size: 32rpx; border: 1px solid #ee0a24; }

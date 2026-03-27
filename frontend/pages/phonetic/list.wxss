@@ -1,0 +1,17 @@
+.list-container { padding: 30rpx; }
+.grid-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.phonetic-item {
+  width: 30%;
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 50rpx 0;
+  margin-bottom: 30rpx;
+  text-align: center;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.03);
+}
+.symbol { font-size: 48rpx; font-weight: bold; color: #000; }
+.empty-tip { text-align: center; color: #999; margin-top: 100rpx; font-size: 28rpx; }

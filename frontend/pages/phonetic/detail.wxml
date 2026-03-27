@@ -1,0 +1,56 @@
+<view class="detail-container">
+  <view class="anatomy-box">
+    <image class="anatomy-img" src="{{detail.anatomyImageUrl}}" mode="aspectFit"></image>
+  </view>
+
+  <scroll-view class="info-scroll" scroll-y>
+    <view class="info-card">
+      <view class="section-title">发音要领</view>
+      <text class="section-content">{{detail.articulation}}</text>
+    </view>
+    <view class="info-card" wx:if="{{detail.rules && detail.rules.length > 0}}">
+      <view class="section-title">读音规则</view>
+      
+      <view class="rule-list">
+        <block wx:for="{{detail.rules}}" wx:key="index" wx:for-item="rule">
+          <view class="rule-item">
+            <view class="rule-pattern">
+              <text class="dot">•</text><text class="pattern-text">{{rule.pattern}}</text>
+            </view>
+            
+            <view class="example-list">
+              <block wx:for="{{rule.examples}}" wx:key="word" wx:for-item="example">
+                <view class="example-item">
+                  <text class="ex-word">{{example.word}}</text>
+                  <text class="ex-phonetic">{{example.phonetic}}</text>
+                  <text class="ex-meaning">{{example.meaning}}</text>
+                </view>
+              </block>
+            </view>
+
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="spacer"></view>
+  </scroll-view>
+
+  <view class="bottom-action-bar pb-safe">
+    <view class="action-btn" bindtap="playStandardAudio">
+      <view class="icon-box">{{isPlayingStandard ? '⏸️' : '▶️'}}</view>
+      <text>标准音</text>
+    </view>
+    
+    <view class="action-btn record-btn {{isRecording ? 'recording' : ''}}" 
+          bindtouchstart="startRecord" 
+          bindtouchend="stopRecord">
+      <view class="icon-box">🎙️</view>
+      <text>{{isRecording ? '松开结束' : '按住录音'}}</text>
+    </view>
+
+    <view class="action-btn" bindtap="playRecordAudio">
+      <view class="icon-box">{{isPlayingRecord ? '⏸️' : '🎧'}}</view>
+      <text>回放录音</text>
+    </view>
+  </view>
+</view>

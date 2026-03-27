@@ -1,0 +1,51 @@
+<view class="detail-container">
+  <swiper class="word-swiper" current="{{currentIndex}}" bindchange="onSwiperChange">
+    <block wx:for="{{wordList}}" wx:key="wordId">
+      <swiper-item>
+        <view class="word-card" bindtap="handleTapBlank">
+          
+          <view class="main-info">
+            <text class="spelling">{{item.spelling}}</text>
+            <view class="phonetic-row">
+              <text class="phonetic">{{item.phonetic}}</text>
+              <view class="audio-icon" catchtap="playAudio" data-url="{{item.audioUrl}}">🔊</view>
+            </view>
+          </view>
+
+          <view class="hint-text" wx:if="{{step === 0}}">点击空白处查看释义</view>
+
+          <scroll-view scroll-y class="scroll-area" wx:if="{{step >= 1}}" catchtap="handleTapBlank">
+            <view class="definitions-box">
+              <block wx:for="{{item.definitions}}" wx:key="meaning" wx:for-item="def">
+                <view class="def-item">
+                  <view class="def-header">
+                    <text class="pos">{{def.partOfSpeech}}</text>
+                    <text class="meaning">{{def.meaning}}</text>
+                  </view>
+
+                  <view class="examples-box" wx:if="{{step >= 2 && def.examples.length > 0}}">
+                    <block wx:for="{{def.examples}}" wx:key="text" wx:for-item="ex">
+                      <view class="example-item">
+                        <view class="ex-fr">
+                          <text>{{ex.text}}</text>
+                          <view class="audio-icon-small" catchtap="playAudio" data-url="{{ex.audioUrl}}" wx:if="{{ex.audioUrl}}">🔊</view>
+                        </view>
+                        <view class="ex-zh">{{ex.translation}}</view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+              </block>
+            </view>
+            <view class="spacer"></view>
+          </scroll-view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="bottom-action-bar pb-safe">
+    <button class="btn btn-unmastered" bindtap="handleMastery" data-status="false">未掌握</button>
+    <button class="btn btn-mastered" bindtap="handleMastery" data-status="true">已掌握</button>
+  </view>
+</view>

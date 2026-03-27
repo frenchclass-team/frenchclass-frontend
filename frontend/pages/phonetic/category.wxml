@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="header">
+    <text class="title">口语跟读</text>
+    <text class="subtitle">请选择音素分类</text>
+  </view>
+  
+  <view class="category-list">
+    <view class="category-card" bindtap="navToList" data-category="vowel" data-name="元音">
+      <text class="card-title">元音 Vowels</text>
+    </view>
+    <view class="category-card" bindtap="navToList" data-category="consonant" data-name="辅音">
+      <text class="card-title">辅音 Consonants</text>
+    </view>
+    <view class="category-card" bindtap="navToList" data-category="semi-vowel" data-name="半元音">
+      <text class="card-title">半元音 Semi-vowels</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,73 @@
+/* 使用 flex 保证 ScrollView 占满剩余空间不被遮挡 */
+.detail-container { display: flex; flex-direction: column; height: 100vh; overflow: hidden; background: #f7f8fa; }
+.video-player { width: 100%; height: 420rpx; flex-shrink: 0; }
+
+.main-tabs { display: flex; background: #fff; height: 100rpx; border-bottom: 1px solid #eee; flex-shrink: 0; }
+.tab-item { flex: 1; text-align: center; line-height: 100rpx; font-size: 32rpx; color: #666; position: relative; }
+.tab-item.active { color: #000; font-weight: bold; }
+.tab-item.active::after { content: ''; position: absolute; bottom: 0; left: 30%; right: 30%; height: 6rpx; background: #000; border-radius: 6rpx; }
+
+.content-scroll { flex: 1; height: 0; padding: 30rpx; box-sizing: border-box; }
+.spacer { height: 180rpx; }
+
+/* Tab 1: 原文 */
+.article-title { font-size: 48rpx; font-weight: bold; margin-bottom: 40rpx; text-align: center; font-family: Georgia, serif;}
+.paragraph-item { margin-bottom: 30rpx; display: flex; flex-direction: column; }
+.fr-text { font-size: 32rpx; color: #333; line-height: 1.6; font-family: Georgia, serif; }
+.zh-text { font-size: 28rpx; color: #666; line-height: 1.6; margin-top: 10rpx; padding-left: 16rpx; border-left: 4rpx solid #ddd;}
+
+/* Tab 2: 学习 */
+.sub-tabs { display: flex; justify-content: center; margin-bottom: 30rpx; }
+.sub-tab-item { padding: 10rpx 40rpx; border-radius: 30rpx; font-size: 28rpx; color: #666; background: #eee; margin: 0 10rpx; }
+.sub-tab-item.active { background: #000; color: #fff; }
+
+.word-card, .grammar-card { background: #fff; border-radius: 16rpx; padding: 30rpx; margin-bottom: 30rpx; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.03); }
+.word-header { display: flex; align-items: baseline; margin-bottom: 10rpx; }
+.spelling { font-size: 36rpx; font-weight: bold; color: #000; margin-right: 20rpx; font-family: Georgia, serif;}
+.phonetic { font-size: 28rpx; color: #666; }
+.meaning { font-size: 30rpx; color: #333; margin-bottom: 20rpx; }
+.context { background: #f9f9f9; padding: 20rpx; border-radius: 12rpx; display: flex; flex-direction: column; }
+.ctx-fr { font-size: 28rpx; color: #333; margin-bottom: 8rpx; }
+.ctx-zh { font-size: 26rpx; color: #999; }
+
+.g-title { font-size: 34rpx; font-weight: bold; margin-bottom: 20rpx; border-left: 8rpx solid #000; padding-left: 16rpx;}
+.g-content { font-size: 30rpx; color: #666; line-height: 1.6; }
+/* 语法高亮全局类，在 js 中注入 */
+.text-highlight { color: #ee0a24; font-weight: bold; background: rgba(238, 10, 36, 0.05); padding: 0 6rpx;}
+
+/* Tab 3: 测试 */
+.quiz-card { background: #fff; border-radius: 16rpx; padding: 40rpx; margin-bottom: 30rpx; box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.03); }
+.q-stem { font-size: 32rpx; font-weight: bold; color: #333; margin-bottom: 30rpx; }
+.q-option { display: block; font-size: 30rpx; color: #666; margin-bottom: 20rpx; padding: 20rpx; background: #f9f9f9; border-radius: 12rpx;}
+.q-input { background: #f9f9f9; height: 80rpx; padding: 0 20rpx; border-radius: 12rpx; font-size: 30rpx; }
+
+/* ==================== 
+   变位题专属样式 
+==================== */
+.q-conjugation-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.person-text {
+  width: 140rpx;
+  font-size: 32rpx;
+  color: #333;
+  font-family: Georgia, serif; /* 衬线体更符合法语人称代词的质感 */
+}
+
+.q-conjugation-row .q-input {
+  flex: 1;
+}
+
+/* 动态颜色控制 */
+.text-green { color: #07c160 !important; background: rgba(7, 193, 96, 0.05) !important; font-weight: bold; border: 1px solid #07c160; }
+.text-red { color: #ee0a24 !important; background: rgba(238, 10, 36, 0.05) !important; font-weight: bold; border: 1px solid #ee0a24; }
+.answer-display { margin-top: 30rpx; font-size: 28rpx; color: #07c160; padding-top: 20rpx; border-top: 1px dashed #eee; }
+
+/* 底部栏 */
+.bottom-action-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; padding: 30rpx 40rpx; box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.05); z-index: 100; display: flex; justify-content: center;}
+.btn { width: 100%; height: 90rpx; line-height: 90rpx; border-radius: 45rpx; font-size: 32rpx; text-align: center; }
+.btn-primary { background: #000; color: #fff; }
+.btn-outline { background: #fff; color: #000; border: 1px solid #000; }

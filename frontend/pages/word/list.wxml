@@ -1,0 +1,12 @@
+<view class="container">
+  <view class="word-list">
+    <block wx:for="{{wordList}}" wx:key="wordId">
+      <view class="word-item" bindtap="navToDetail" data-index="{{index}}">
+        <text class="spelling">{{item.spelling}}</text>
+        <text class="meaning" wx:if="{{item.definitions && item.definitions.length > 0}}">{{item.definitions[0].meaning}}</text>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{loading}}" class="loading-tip">加载中...</view>
+  <view wx:if="{{!hasMore && wordList.length > 0}}" class="bottom-tip">- 到底了 -</view>
+</view>

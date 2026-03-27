@@ -1,0 +1,9 @@
+.container { padding: 60rpx 40rpx; }
+.header { margin-bottom: 80rpx; }
+.title { font-size: 56rpx; font-weight: bold; display: block; margin-bottom: 20rpx;}
+.subtitle { font-size: 28rpx; color: #666; }
+.form-group { margin-bottom: 60rpx; }
+.input-box { height: 100rpx; border-bottom: 1px solid #eee; margin-bottom: 30rpx; font-size: 32rpx; }
+.role-group { display: flex; margin-top: 40rpx; }
+.radio-label { margin-right: 40rpx; font-size: 28rpx; display: flex; align-items: center; }
+.btn-primary { background-color: #000; color: #fff; border-radius: 50rpx; font-size: 32rpx; }

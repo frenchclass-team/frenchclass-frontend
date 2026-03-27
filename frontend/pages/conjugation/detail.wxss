@@ -1,0 +1,30 @@
+.container { padding: 40rpx; padding-bottom: 200rpx; }
+.header { margin-bottom: 60rpx; text-align: center; }
+.title { font-size: 56rpx; font-weight: bold; color: #000; display: block; margin-bottom: 10rpx; }
+.subtitle { font-size: 28rpx; color: #999; }
+
+.table-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.03);
+}
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 0;
+  border-bottom: 1px dashed #f0f0f0;
+  font-size: 34rpx;
+}
+.table-row:last-child { border-bottom: none; }
+.person-col { color: #666; width: 40%; font-family: Georgia, serif; }
+.verb-col { color: #000; font-weight: 500; text-align: right; flex: 1; }
+
+.bottom-action-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; padding: 30rpx 40rpx;
+  box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.05); z-index: 100;
+}
+.btn-primary {
+  background-color: #000; color: #fff; border-radius: 50rpx; font-size: 32rpx; width: 100%;
+}

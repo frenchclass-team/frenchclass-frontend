@@ -1,0 +1,10 @@
+<view class="list-container">
+  <view class="grid-list">
+    <block wx:for="{{phoneticList}}" wx:key="phoneticId">
+      <view class="phonetic-item" bindtap="navToDetail" data-id="{{item.phoneticId}}">
+        <text class="symbol">{{item.symbol}}</text>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{phoneticList.length === 0}}" class="empty-tip">暂无音素数据</view>
+</view>

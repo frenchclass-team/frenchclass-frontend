@@ -1,0 +1,16 @@
+.container { padding: 40rpx; }
+.header { margin-bottom: 60rpx; }
+.title { font-size: 56rpx; font-weight: bold; display: block; margin-bottom: 20rpx; }
+.subtitle { font-size: 28rpx; color: #666; }
+
+.category-card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 60rpx 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-title { font-size: 36rpx; font-weight: 500; color: #333; }

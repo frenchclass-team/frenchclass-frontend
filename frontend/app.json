@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/translate/index",
+    "pages/profile/index",
+    "pages/auth/login",
+    "pages/phonetic/category",
+    "pages/phonetic/list",
+    "pages/phonetic/detail",
+    "pages/word/list",
+    "pages/word/detail",
+    "pages/conjugation/detail",
+    "pages/conjugation/test",
+    "pages/article/list",
+    "pages/article/detail",
+    "pages/conjugation/list"
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/translate/index",
+        "text": "翻译"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "法语优课"
+  }
+}

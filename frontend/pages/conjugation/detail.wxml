@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{stem}}</text>
+    <text class="subtitle">完整变位表</text>
+  </view>
+  
+  <view class="table-card">
+    <block wx:for="{{answerList}}" wx:key="person">
+      <view class="table-row">
+        <text class="person-col">{{item.person}}</text>
+        <text class="verb-col">{{item.verb}}</text>
+      </view>
+    </block>
+  </view>
+  
+  <view class="bottom-action-bar pb-safe">
+    <button class="btn btn-primary" bindtap="navToTest">开始自测</button>
+  </view>
+</view>

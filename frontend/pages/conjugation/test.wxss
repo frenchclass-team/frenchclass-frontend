@@ -1,0 +1,38 @@
+.container { padding: 40rpx; padding-bottom: 200rpx; }
+.header { margin-bottom: 60rpx; text-align: center; }
+.title { font-size: 56rpx; font-weight: bold; color: #000; display: block; margin-bottom: 10rpx; }
+.subtitle { font-size: 28rpx; color: #999; }
+
+.form-card {
+  background: #fff; border-radius: 20rpx;
+  padding: 20rpx 40rpx; box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.03);
+}
+.form-row {
+  display: flex; align-items: center; position: relative;
+  padding: 20rpx 0; border-bottom: 1px dashed #f0f0f0;
+}
+.form-row:last-child { border-bottom: none; }
+.person-col { color: #666; width: 35%; font-size: 34rpx; font-family: Georgia, serif; }
+
+.input-box {
+  flex: 1; height: 80rpx; background: #f9f9f9;
+  border-radius: 12rpx; padding: 0 20rpx; font-size: 32rpx;
+  color: #333; transition: color 0.3s;
+}
+
+/* 利用 app.wxss 中已存在的 text-green 和 text-red 进行颜色覆盖 */
+.text-green { color: #07c160 !important; background: rgba(7, 193, 96, 0.05); }
+.text-red { color: #ee0a24 !important; background: rgba(238, 10, 36, 0.05); }
+
+.feedback-icon {
+  position: absolute; right: 20rpx; top: 50%; transform: translateY(-50%);
+}
+
+.bottom-action-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; padding: 30rpx 40rpx;
+  box-shadow: 0 -4rpx 20rpx rgba(0,0,0,0.05); z-index: 100;
+}
+.btn-primary {
+  background-color: #000; color: #fff; border-radius: 50rpx; font-size: 32rpx; width: 100%;
+}
