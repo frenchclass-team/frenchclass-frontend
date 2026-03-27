@@ -24,7 +24,7 @@ cd frenchclass-frontend
 * **密码**：`000`
 
 
-## 4. Git协作规范
+## 4. Git协作规范（github desktop 版本）
 
 ### 4.1 创建功能分支
 * 在 GitHub Desktop 顶部中间点击 **Current Branch**。
