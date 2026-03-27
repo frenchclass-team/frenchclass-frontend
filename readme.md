@@ -43,10 +43,10 @@ cd frenchclass-frontend
 * 点击右侧出现的 **Create Pull Request** 按钮。
 * **注意**：这会自动打开浏览器，进入 GitHub 网页。
 * 在网页上确认：`base: main` ← `compare: ui/xxx`。
-* 点击 **Create pull request**，并在右侧 **Reviewers** 处勾选june-sf，然后call我审核合并。
+* 点击 **Create pull request**，并在右侧 **Reviewers** 处勾选june-sf，然后call我等待审核合并。
 
 ### 4.4 代码合并后同步到本地
-* 在 GitHub Desktop 切换回 **Current Branch: main**。
+* 审核通过后，在 GitHub Desktop 切换回 **Current Branch: main**。
 * 点击 **Fetch origin**，然后点击 **Pull origin**。
 * 此时本地的 `main` 就是包含最新功能的最全代码了。
 
